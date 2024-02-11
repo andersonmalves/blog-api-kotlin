@@ -19,4 +19,8 @@ object UserMapper {
             email = email
         )
     }
+
+    fun List<User>.toResponse(): List<UserResponse> {
+        return map { it.toResponse() }
+    }
 }

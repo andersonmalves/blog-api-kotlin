@@ -17,17 +17,19 @@ class UserController(
 
     @PostMapping
     fun createUser(@RequestBody request: UserRequest): ResponseEntity<UserResponse> {
-        val createdUser = userService.createUser(request)
-        return ResponseEntity(createdUser.toResponse(), HttpStatus.CREATED)
+        val createdUser = userService.createUser(request).toResponse()
+        return ResponseEntity(createdUser, HttpStatus.CREATED)
     }
 
     @GetMapping("/{email}")
-    fun getUserByEmail(@PathVariable email: String): ResponseEntity<User> {
+    fun getUserByEmail(@PathVariable email: String): ResponseEntity<UserResponse> {
         val user = userService.getUserByEmail(email)
-        return if (user != null) {
-            ResponseEntity(user, HttpStatus.OK)
-        } else {
-            ResponseEntity(HttpStatus.NOT_FOUND)
-        }
+        return ResponseEntity(user?.toResponse(), HttpStatus.OK)
+    }
+
+    @GetMapping
+    fun findAllUsers(): ResponseEntity<List<UserResponse>> {
+        val userList = userService.findAllUsers().toResponse()
+        return ResponseEntity(userList, HttpStatus.OK)
     }
 }

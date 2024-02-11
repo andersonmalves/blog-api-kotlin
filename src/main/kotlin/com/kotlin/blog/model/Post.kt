@@ -4,11 +4,11 @@ import jakarta.persistence.*
 import java.time.LocalDateTime
 
 @Entity
-@Table(name = "`post`")
+@Table(name = "posts")
 data class Post(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    val id: Long? = null,
 
     @Column(nullable = false)
     val title: String,
@@ -22,7 +22,7 @@ data class Post(
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-        name = "post_category",
+        name = "posts_categories",
         joinColumns = [JoinColumn(name = "post_id")],
         inverseJoinColumns = [JoinColumn(name = "category_id")]
     )
