@@ -3,7 +3,6 @@ package com.kotlin.blog.controller
 import com.kotlin.blog.dto.request.UserRequest
 import com.kotlin.blog.model.User
 import com.kotlin.blog.service.UserService
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/users")
 class UserController(
-    @Autowired private val userService: UserService
+    private val userService: UserService
 ) {
 
     @PostMapping
