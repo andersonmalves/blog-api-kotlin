@@ -1,6 +1,8 @@
 package com.kotlin.blog.controller
 
+import com.kotlin.blog.dto.mapper.UserMapper.toResponse
 import com.kotlin.blog.dto.request.UserRequest
+import com.kotlin.blog.dto.response.UserResponse
 import com.kotlin.blog.model.User
 import com.kotlin.blog.service.UserService
 import org.springframework.http.HttpStatus
@@ -14,9 +16,9 @@ class UserController(
 ) {
 
     @PostMapping
-    fun createUser(@RequestBody request: UserRequest): ResponseEntity<User> {
+    fun createUser(@RequestBody request: UserRequest): ResponseEntity<UserResponse> {
         val createdUser = userService.createUser(request)
-        return ResponseEntity(createdUser, HttpStatus.CREATED)
+        return ResponseEntity(createdUser.toResponse(), HttpStatus.CREATED)
     }
 
     @GetMapping("/{email}")
