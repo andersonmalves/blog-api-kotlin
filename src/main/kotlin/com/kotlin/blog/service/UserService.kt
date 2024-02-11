@@ -6,14 +6,12 @@ import com.kotlin.blog.model.User
 import com.kotlin.blog.repository.UserRepository
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException
 import org.springframework.stereotype.Service
 import kotlin.collections.List
 
 @Service
 class UserService(
-    @Autowired
     private val userRepository: UserRepository
 ) {
     fun createUser(request: UserRequest): User {
