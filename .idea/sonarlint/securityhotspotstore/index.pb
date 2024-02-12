@@ -50,3 +50,7 @@ p
 @src/main/kotlin/com/kotlin/blog/dto/response/CategoryResponse.kt,f/2/f29cf114336bfdfb0acc1324ad3ed5b2a0e9cd74
 l
 <src/main/kotlin/com/kotlin/blog/dto/mapper/CategoryMapper.kt,b/b/bb3e2feb15d87908e3e842d03f81b9669c98a6d0
+c
+3src/main/kotlin/com/kotlin/blog/dto/enums/Status.kt,3/2/322aedb7e15848d955c0b77aa133e03fb83f1b4c
+`
+0src/main/kotlin/com/kotlin/blog/model/Comment.kt,a/4/a46a0a8ffc07cfdae58b62da2291b33410650e4e

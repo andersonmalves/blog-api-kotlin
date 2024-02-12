@@ -2,7 +2,6 @@ package com.kotlin.blog.controller
 
 import com.kotlin.blog.dto.mapper.CategoryMapper.toResponse
 import com.kotlin.blog.dto.response.CategoryResponse
-import com.kotlin.blog.model.Category
 import com.kotlin.blog.service.CategoryService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

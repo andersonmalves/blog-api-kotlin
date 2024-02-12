@@ -1,6 +1,7 @@
 package com.kotlin.blog.model
 
 
+import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
@@ -11,6 +12,7 @@ import jakarta.persistence.JoinColumn
 import jakarta.persistence.JoinTable
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.ManyToMany
+import jakarta.persistence.OneToMany
 import jakarta.persistence.Table
 import java.time.LocalDateTime
 
@@ -38,6 +40,9 @@ data class Post(
         inverseJoinColumns = [JoinColumn(name = "category_id")]
     )
     val categories: List<Category>,
+
+    @OneToMany(mappedBy = "post", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+    val comments: List<Comment> = mutableListOf(),
 
     @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()
