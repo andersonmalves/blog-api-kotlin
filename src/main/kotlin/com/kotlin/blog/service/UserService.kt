@@ -2,6 +2,7 @@ package com.kotlin.blog.service
 
 import com.kotlin.blog.dto.mapper.UserMapper.toEntity
 import com.kotlin.blog.dto.request.UserRequest
+import com.kotlin.blog.exceptions.ResourceNotFoundException
 import com.kotlin.blog.model.User
 import com.kotlin.blog.repository.UserRepository
 import org.slf4j.Logger
@@ -21,7 +22,7 @@ class UserService(
 
     fun getUserByEmail(email: String): User? {
         return userRepository.findByEmail(email)
-            ?: throw NotFoundException()
+            ?: throw ResourceNotFoundException("Email não encontrado")
     }
 
     fun findAllUsers(): List<User> {

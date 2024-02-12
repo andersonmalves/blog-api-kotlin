@@ -2,7 +2,6 @@ package com.kotlin.blog.controller
 
 import com.kotlin.blog.dto.mapper.PostMapper.toResponse
 import com.kotlin.blog.dto.response.PostResponse
-import com.kotlin.blog.model.Post
 import com.kotlin.blog.service.PostService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
