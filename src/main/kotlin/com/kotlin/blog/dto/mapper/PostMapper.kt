@@ -9,6 +9,8 @@ object PostMapper {
             id = id!!,
             title = title,
             content = content,
+            user = user.name,
+            categories = categories.map { it.name },
             createdAt = createdAt
         )
     }

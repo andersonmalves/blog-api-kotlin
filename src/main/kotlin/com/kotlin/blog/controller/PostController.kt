@@ -16,7 +16,7 @@ class PostController(
 ) {
     @GetMapping
     fun getAllPosts(): ResponseEntity<List<PostResponse>> {
-        val postsList = postService.getAllPosts().toResponse()
-        return ResponseEntity(postsList, HttpStatus.OK)
+        val posts = postService.getAllPosts().toResponse()
+        return ResponseEntity(posts, HttpStatus.OK)
     }
 }

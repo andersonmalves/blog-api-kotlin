@@ -29,7 +29,7 @@ class UserController(
 
     @GetMapping
     fun findAllUsers(): ResponseEntity<List<UserResponse>> {
-        val userList = userService.findAllUsers().toResponse()
-        return ResponseEntity(userList, HttpStatus.OK)
+        val users = userService.findAllUsers().toResponse()
+        return ResponseEntity(users, HttpStatus.OK)
     }
 }
