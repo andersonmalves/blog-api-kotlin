@@ -1,5 +1,6 @@
 package com.kotlin.blog.dto.mapper
 
+import com.kotlin.blog.dto.mapper.CategoryMapper.toResponse
 import com.kotlin.blog.dto.response.PostResponse
 import com.kotlin.blog.model.Post
 

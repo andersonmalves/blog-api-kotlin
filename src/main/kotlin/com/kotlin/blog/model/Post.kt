@@ -33,7 +33,7 @@ data class Post(
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-        name = "posts_categories",
+        name = "post_category",
         joinColumns = [JoinColumn(name = "post_id")],
         inverseJoinColumns = [JoinColumn(name = "category_id")]
     )
