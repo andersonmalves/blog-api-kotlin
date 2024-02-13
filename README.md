@@ -1,5 +1,13 @@
 # Blog api em Kotlin
 
+Atualmente o post pode ter:
+- Status: published ou draft
+- Tags
+- Categorias
+- Comentários
+- Comentários aninhados
+
+
 Próximos passos:
 
  - [ ] Implementar camada de segurança
