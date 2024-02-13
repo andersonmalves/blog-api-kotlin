@@ -60,6 +60,7 @@ class PostController(
             .map { it.toResponse() }
         return ResponseEntity(posts, HttpStatus.OK)
     }
+
     @PostMapping("/posts")
     fun createPost(@RequestBody request: PostRequest): ResponseEntity<PostResponse> {
         val createdPost = postService.createPost(request)
