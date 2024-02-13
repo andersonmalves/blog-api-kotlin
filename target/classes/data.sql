@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS posts (
     title VARCHAR(255) NOT NULL,
     content TEXT,
     user_id INT NOT NULL,
+    status VARCHAR(25) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
@@ -46,9 +47,9 @@ INSERT INTO categories (id, name) VALUES
 (2, 'Esportes'),
 (3, 'Notícias');
 
-INSERT INTO posts (id, title, content, user_id) VALUES
-(1, 'Novidades no mundo da tecnologia', 'Confira as últimas novidades no mundo da tecnologia.', 1),
-(2, 'Resultados do campeonato de futebol', 'Veja os resultados do último campeonato de futebol.', 2);
+INSERT INTO posts (id, title, content, user_id, status) VALUES
+(1, 'Novidades no mundo da tecnologia', 'Confira as últimas novidades no mundo da tecnologia.', 1, 'PUBLISHED'),
+(2, 'Resultados do campeonato de futebol', 'Veja os resultados do último campeonato de futebol.', 2, 'DRAFT');
 
 INSERT INTO post_category (post_id, category_id) VALUES
 (1, 1),

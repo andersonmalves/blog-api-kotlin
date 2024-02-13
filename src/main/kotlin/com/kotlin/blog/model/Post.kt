@@ -2,9 +2,12 @@ package com.kotlin.blog.model
 
 
 import com.fasterxml.jackson.annotation.JsonFormat
+import com.kotlin.blog.dto.enums.Status
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
+import jakarta.persistence.EnumType
+import jakarta.persistence.Enumerated
 import jakarta.persistence.FetchType
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -44,6 +47,10 @@ data class Post(
 
     @OneToMany(mappedBy = "post", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val comments: List<Comment> = mutableListOf(),
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    val status: Status,
 
     @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()

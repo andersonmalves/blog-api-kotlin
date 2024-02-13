@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*
 class UserController(
     private val userService: UserService
 ) {
-
     @PostMapping
     fun createUser(@RequestBody request: UserRequest): ResponseEntity<UserResponse> {
         val createdUser = userService.createUser(request).toResponse()

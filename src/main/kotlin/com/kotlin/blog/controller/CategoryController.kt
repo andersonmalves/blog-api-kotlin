@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController
 class CategoryController(
     private val categoryService: CategoryService
 ) {
-
     @GetMapping
     fun getAllCategories(): ResponseEntity<List<CategoryResponse>> {
         val categories = categoryService.getAllCategories().toResponse()

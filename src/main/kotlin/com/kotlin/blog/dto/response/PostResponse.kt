@@ -12,5 +12,6 @@ data class PostResponse(
     val user: String,
     val categories: List<String>,
     val comments: List<CommentResponse>,
+    val status: String,
     val createdAt: LocalDateTime
 )

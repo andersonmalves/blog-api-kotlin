@@ -14,6 +14,7 @@ object PostMapper {
             user = user.name,
             categories = categories.map { it.name },
             comments = comments.map { it.toResponse() },
+            status = status.name,
             createdAt = createdAt
         )
     }
