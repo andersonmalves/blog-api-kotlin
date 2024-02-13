@@ -76,3 +76,5 @@ e
 5src/main/kotlin/com/kotlin/blog/service/TagService.kt,e/7/e7c214589cec71964a19a367051a520b3c20bd48
 m
 =src/main/kotlin/com/kotlin/blog/dto/request/CommentRequest.kt,c/9/c9158a6be293c79c948936d7e775396f1dbcb145
+j
+:src/main/kotlin/com/kotlin/blog/dto/request/PostRequest.kt,a/b/ab47c4d011de2b0f0328b12649ac09272657747c

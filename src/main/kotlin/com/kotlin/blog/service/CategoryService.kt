@@ -11,4 +11,8 @@ class CategoryService(
     fun getAllCategories(): List<Category> {
         return categoryRepository.findAll()
     }
+
+    fun findAllById(ids: List<Long>): List<Category> {
+        return categoryRepository.findAllById(ids)
+    }
 }

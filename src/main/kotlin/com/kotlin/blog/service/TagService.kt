@@ -17,4 +17,8 @@ class TagService(
         val tag = Tag(name = tagRequest.name)
         return tagRepository.save(tag)
     }
+
+    fun findAllById(ids: List<Long>): Set<Tag> {
+        return tagRepository.findAllById(ids).toSet()
+    }
 }
