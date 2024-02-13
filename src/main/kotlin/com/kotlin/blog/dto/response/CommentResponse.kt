@@ -5,12 +5,8 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming
 import java.time.LocalDateTime
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy::class)
-data class PostResponse(
-    val id: Long,
-    val title: String,
+data class CommentResponse(
     val content: String,
     val user: String,
-    val categories: List<String>,
-    val comments: List<CommentResponse>,
-    val createdAt: LocalDateTime
+    val publicationDate: LocalDateTime
 )

@@ -54,3 +54,7 @@ c
 3src/main/kotlin/com/kotlin/blog/dto/enums/Status.kt,3/2/322aedb7e15848d955c0b77aa133e03fb83f1b4c
 `
 0src/main/kotlin/com/kotlin/blog/model/Comment.kt,a/4/a46a0a8ffc07cfdae58b62da2291b33410650e4e
+o
+?src/main/kotlin/com/kotlin/blog/dto/response/CommentResponse.kt,5/5/5581f89e80cca0e642d697e7742a8bf3201c5014
+k
+;src/main/kotlin/com/kotlin/blog/dto/mapper/CommentMapper.kt,8/d/8d42ed85402337b2e5a7aebedc45d67b8697e94c

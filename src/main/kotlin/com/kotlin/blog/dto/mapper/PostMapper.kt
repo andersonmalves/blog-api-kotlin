@@ -1,6 +1,7 @@
 package com.kotlin.blog.dto.mapper
 
 import com.kotlin.blog.dto.mapper.CategoryMapper.toResponse
+import com.kotlin.blog.dto.mapper.CommentMapper.toResponse
 import com.kotlin.blog.dto.response.PostResponse
 import com.kotlin.blog.model.Post
 
@@ -12,6 +13,7 @@ object PostMapper {
             content = content,
             user = user.name,
             categories = categories.map { it.name },
+            comments = comments.map { it.toResponse() },
             createdAt = createdAt
         )
     }

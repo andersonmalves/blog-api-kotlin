@@ -1,5 +1,6 @@
 package com.kotlin.blog.model
 
+import com.fasterxml.jackson.annotation.JsonFormat
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
@@ -29,6 +30,11 @@ data class Comment(
     @JoinColumn(name = "author_id", nullable = false)
     val user: User,
 
+    // @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     @Column(nullable = false)
     val publicationDate: LocalDateTime = LocalDateTime.now()
-)
+) {
+    override fun toString(): String {
+        return "Comment(id=$id, content='$content', publicationDate='$publicationDate')"
+    }
+}
