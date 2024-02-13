@@ -1,5 +1,6 @@
 package com.kotlin.blog.controller
 
+import com.kotlin.blog.dto.mapper.CommentMapper.toDTO
 import com.kotlin.blog.dto.mapper.CommentMapper.toResponse
 import com.kotlin.blog.dto.request.CommentRequest
 import com.kotlin.blog.dto.response.CommentResponse
@@ -19,15 +20,15 @@ import org.springframework.web.bind.annotation.RestController
 class CommentController (
     private val commentService: CommentService
 ) {
-    @GetMapping
+    @GetMapping("/{postId}")
     fun getCommentsByPostId(@PathVariable postId: Long): ResponseEntity<List<CommentResponse>> {
         val comments = commentService.getCommentsByPostId(postId).toResponse()
         return ResponseEntity(comments, HttpStatus.OK)
     }
 
     @PostMapping
-    fun createComment(@RequestBody commentRequest: CommentRequest): ResponseEntity<Comment> {
-        val createdComment = commentService.createComment(commentRequest)
+    fun createComment(@RequestBody commentRequest: CommentRequest): ResponseEntity<CommentResponse> {
+        val createdComment = commentService.createComment(commentRequest).toResponse()
         return ResponseEntity(createdComment, HttpStatus.CREATED)
     }
 

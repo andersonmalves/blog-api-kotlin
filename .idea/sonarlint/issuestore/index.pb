@@ -78,3 +78,7 @@ m
 =src/main/kotlin/com/kotlin/blog/dto/request/CommentRequest.kt,c/9/c9158a6be293c79c948936d7e775396f1dbcb145
 j
 :src/main/kotlin/com/kotlin/blog/dto/request/PostRequest.kt,a/b/ab47c4d011de2b0f0328b12649ac09272657747c
+a
+1src/main/kotlin/com/kotlin/blog/dto/CommentDTO.kt,7/e/7ea1ee6ea117cbeb5d973016b1f3047d21429d0b
+k
+;src/main/kotlin/com/kotlin/blog/dto/response/TagResponse.kt,c/6/c6b55f076bbd8cb6e5f2d5132c7d7c531b1c0b5e

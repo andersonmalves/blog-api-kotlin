@@ -1,5 +1,6 @@
 package com.kotlin.blog.service
 
+import com.kotlin.blog.dto.mapper.CommentMapper.toDTO
 import com.kotlin.blog.dto.request.CommentRequest
 import com.kotlin.blog.model.Comment
 import com.kotlin.blog.repository.CommentRepository
@@ -18,14 +19,20 @@ class CommentService (
     }
 
     fun createComment(commentRequest: CommentRequest): Comment {
-        val publicationDate = LocalDateTime.now()
-        val post = postService.getPostById(commentRequest.postId)
-        val user = userService.getUserById(commentRequest.userId)
+        val commentDTO = commentRequest.toDTO()
+        val post = postService.getPostById(commentDTO.postId)
+        val user = userService.getUserById(commentDTO.userId)
 
-        val comment = Comment(content = commentRequest.content,
+        if (commentDTO.parentId != null) {
+            val parentComment = commentRepository.findById(commentDTO.parentId)
+                .orElseThrow { throw NoSuchElementException("Comentário pai não encontrado") }
+            require(parentComment.post.id == commentDTO.postId) { "O comentário pai não pertence ao mesmo post" }
+        }
+
+        val comment = Comment(content = commentDTO.content,
             post = post,
             user = user,
-            publicationDate = publicationDate
+            publicationDate = LocalDateTime.now()
         )
 
         return commentRepository.save(comment)
