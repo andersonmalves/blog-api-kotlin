@@ -5,6 +5,7 @@ import com.kotlin.blog.dto.request.UserRequest
 import com.kotlin.blog.exceptions.ResourceNotFoundException
 import com.kotlin.blog.model.User
 import com.kotlin.blog.repository.UserRepository
+import jakarta.persistence.EntityNotFoundException
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException
@@ -29,6 +30,11 @@ class UserService(
         val userList = userRepository.findAll()
         log.info("Total de users: {}", userList.size)
         return userList
+    }
+
+    fun getUserById(id: Long): User {
+        return userRepository.findById(id)
+            .orElseThrow { EntityNotFoundException("User not found with id: $id") }
     }
 
     companion object {

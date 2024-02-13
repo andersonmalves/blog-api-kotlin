@@ -53,6 +53,14 @@ data class Post(
     @Column(name = "status", nullable = false)
     val status: Status,
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "post_tag",
+        joinColumns = [JoinColumn(name = "post_id")],
+        inverseJoinColumns = [JoinColumn(name = "tag_id")]
+    )
+    val tags: Set<Tag> = emptySet(),
+
     @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()
 )

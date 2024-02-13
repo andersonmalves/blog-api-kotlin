@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface PostRepository : JpaRepository<Post, Long> {
+    fun findByTitleContainingIgnoreCaseOrContentContainingIgnoreCase(title: String, content: String): List<Post>
 }
