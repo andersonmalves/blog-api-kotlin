@@ -1,5 +1,6 @@
 package com.kotlin.blog.controller
 
+import com.kotlin.blog.dto.mapper.TagMapper.toResponse
 import com.kotlin.blog.dto.request.TagRequest
 import com.kotlin.blog.dto.response.TagResponse
 import com.kotlin.blog.model.Tag
@@ -20,13 +21,13 @@ class TagController(
 
     @GetMapping
     fun getAllTags(): ResponseEntity<List<TagResponse>> {
-        val tags = tagService.getAllTags()
+        val tags = tagService.getAllTags().toResponse()
         return ResponseEntity(tags, HttpStatus.OK)
     }
 
     @PostMapping
     fun createTag(@RequestBody tagRequest: TagRequest): ResponseEntity<TagResponse> {
-        val createdTag = tagService.createTag(tagRequest)
+        val createdTag = tagService.createTag(tagRequest).toResponse()
         return ResponseEntity(createdTag, HttpStatus.CREATED)
     }
 }
