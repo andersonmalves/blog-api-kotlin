@@ -47,8 +47,8 @@ class PostService(
 
     fun createPost(request: PostRequest): Post {
         val user = userService.getUserById(request.userId)
-        val categories = categoryService.findAllById(request.categoryIds)
-        val tags = tagService.findAllById(request.tagIds)
+        val categories = categoryService.findByIds(request.categoryIds)
+        val tags = tagService.findByIds(request.tagIds)
 
         val post = Post(
             title = request.title,

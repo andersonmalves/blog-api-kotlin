@@ -25,13 +25,13 @@ class PostController(
 ) {
     @GetMapping
     fun getAllPosts(pageable: Pageable): ResponseEntity<Page<PostResponse>> {
-        val posts = postService.getAllPosts(pageable).toResponse()
+        val posts = postService.getAllPosts(pageable).map { it.toResponse() }
         return ResponseEntity(posts, HttpStatus.OK)
     }
 
     @GetMapping("/search")
     fun searchPostsByKeyword(@RequestParam keyword: String): ResponseEntity<List<PostResponse>> {
-        val posts = postService.searchPostsByKeyword(keyword).toResponse()
+        val posts = postService.searchPostsByKeyword(keyword).map { it.toResponse() }
         return ResponseEntity(posts, HttpStatus.OK)
     }
 
@@ -64,9 +64,6 @@ class PostController(
     @PostMapping("/posts")
     fun createPost(@RequestBody request: PostRequest): ResponseEntity<PostResponse> {
         val createdPost = postService.createPost(request)
-        val response = createdPost.toResponse()
-        return ResponseEntity(response, HttpStatus.CREATED)
+        return ResponseEntity(createdPost.toResponse(), HttpStatus.CREATED)
     }
-
-
 }

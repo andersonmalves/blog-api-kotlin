@@ -8,7 +8,6 @@ import com.kotlin.blog.repository.UserRepository
 import jakarta.persistence.EntityNotFoundException
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException
 import org.springframework.stereotype.Service
 import kotlin.collections.List
 
@@ -17,8 +16,11 @@ class UserService(
     private val userRepository: UserRepository
 ) {
     fun createUser(request: UserRequest): User {
+        require(request.email.isNotBlank()) { "O e-mail não pode estar em branco" }
         require(userRepository.findByEmail(request.email) == null) { "E-mail já está em uso" }
-        return userRepository.save(request.toEntity())
+
+        val user = request.toEntity()
+        return userRepository.save(user)
     }
 
     fun getUserByEmail(email: String): User? {
@@ -28,13 +30,13 @@ class UserService(
 
     fun findAllUsers(): List<User> {
         val userList = userRepository.findAll()
-        log.info("Total de users: {}", userList.size)
+        log.info("Total de usuários: {}", userList.size)
         return userList
     }
 
     fun getUserById(id: Long): User {
         return userRepository.findById(id)
-            .orElseThrow { EntityNotFoundException("User not found with id: $id") }
+            .orElseThrow { EntityNotFoundException("Usuário não encontrado com ID: $id") }
     }
 
     companion object {
