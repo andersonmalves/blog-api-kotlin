@@ -11,4 +11,8 @@ object CommentMapper {
             publicationDate = publicationDate
         )
     }
+
+    fun List<Comment>.toResponse(): List<CommentResponse> {
+        return map { it.toResponse() }
+    }
 }

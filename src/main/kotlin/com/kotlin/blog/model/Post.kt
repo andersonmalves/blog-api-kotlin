@@ -18,6 +18,7 @@ import jakarta.persistence.ManyToOne
 import jakarta.persistence.ManyToMany
 import jakarta.persistence.OneToMany
 import jakarta.persistence.Table
+import org.springframework.format.annotation.DateTimeFormat
 import java.time.LocalDateTime
 
 @Entity
