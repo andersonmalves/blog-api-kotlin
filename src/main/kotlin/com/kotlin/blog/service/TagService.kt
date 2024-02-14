@@ -16,9 +16,7 @@ class TagService(
     }
 
     fun createTag(tagRequest: TagRequest): Tag {
-        if (tagRequest.name.isBlank()) {
-            throw IllegalArgumentException("O nome da tag não pode estar em branco.")
-        }
+        require(tagRequest.name.isNotBlank()) { "O nome da tag não pode estar em branco." }
 
         val tag = Tag(name = tagRequest.name)
         return tagRepository.save(tag)
