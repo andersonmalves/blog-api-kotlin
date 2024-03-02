@@ -33,53 +33,54 @@ O projeto segue uma arquitetura baseada em Spring Boot, que é um framework Java
 A estrutura do projeto segue um padrão comum do Spring Boot:
 
 ```sh
-└── blog-api-kotlin/
-    ├── config.env.example
-    ├── package-lock.json
-    ├── package.json
-    └── src
-        ├── main
-        │   ├── kotlin
-        │   │   └── com
-        │   │       └── kotlin
-        │   │           └── blog
-        │   │               ├── controller
-        │   │               │   ├── CategoryController.kt
-        │   │               │   ├── CommentController.kt
-        │   │               │   ├── PostController.kt
-        │   │               │   └── TagController.kt
-        │   │               ├── dto
-        │   │               │   ├── CategoryRequest.kt
-        │   │               │   ├── CommentRequest.kt
-        │   │               │   ├── PostRequest.kt
-        │   │               │   └── TagRequest.kt
-        │   │               ├── model
-        │   │               │   ├── Category.kt
-        │   │               │   ├── Comment.kt
-        │   │               │   ├── Post.kt
-        │   │               │   └── Tag.kt
-        │   │               ├── repository
-        │   │               │   ├── CategoryRepository.kt
-        │   │               │   ├── CommentRepository.kt
-        │   │               │   ├── PostRepository.kt
-        │   │               │   └── TagRepository.kt
-        │   │               └── service
-        │   │                   ├── CategoryService.kt
-        │   │                   ├── CommentService.kt
-        │   │                   ├── PostService.kt
-        │   │                   └── TagService.kt
-        │   └── resources
-        │       └── application.properties
-        └── test
-            └── kotlin
-                └── com
-                    └── kotlin
-                        └── blog
-                            └── controller
-                                ├── CategoryControllerTest.kt
-                                ├── CommentControllerTest.kt
-                                ├── PostControllerTest.kt
-                                └── TagControllerTest.kt
+    ├── blog-api-kotlin/
+    │   ├── config.env.example
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── src
+    │       ├── main
+    │       │   ├── kotlin
+    │       │   │   └── com
+    │       │   │       └── kotlin
+    │       │   │           └── blog
+    │       │   │               ├── controller
+    │       │   │               │   ├── CategoryController.kt
+    │       │   │               │   ├── CommentController.kt
+    │       │   │               │   ├── PostController.kt
+    │       │   │               │   └── TagController.kt
+    │       │   │               ├── dto
+    │       │   │               │   ├── CategoryRequest.kt
+    │       │   │               │   ├── CommentRequest.kt
+    │       │   │               │   ├── PostRequest.kt
+    │       │   │               │   └── TagRequest.kt
+    │       │   │               ├── model
+    │       │   │               │   ├── Category.kt
+    │       │   │               │   ├── Comment.kt
+    │       │   │               │   ├── Post.kt
+    │       │   │               │   └── Tag.kt
+    │       │   │               ├── repository
+    │       │   │               │   ├── CategoryRepository.kt
+    │       │   │               │   ├── CommentRepository.kt
+    │       │   │               │   ├── PostRepository.kt
+    │       │   │               │   └── TagRepository.kt
+    │       │   │               └── service
+    │       │   │                   ├── CategoryService.kt
+    │       │   │                   ├── CommentService.kt
+    │       │   │                   ├── PostService.kt
+    │       │   │                   └── TagService.kt
+    │       │   └── resources
+    │       │       └── application.properties
+    │       └── test
+    │           └── kotlin
+    │               └── com
+    │                   └── kotlin
+    │                       └── blog
+    │                           └── controller
+    │                               ├── CategoryControllerTest.kt
+    │                               ├── CommentControllerTest.kt
+    │                               ├── PostControllerTest.kt
+    │                               └── TagControllerTest.kt
+    └── Dockerfile
 ```
 
 ## Como Executar o Projeto
