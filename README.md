@@ -7,13 +7,13 @@ Este é um projeto de exemplo de uma API de blog desenvolvida em Kotlin com o fr
 
 O projeto utiliza as seguintes tecnologias e ferramentas:
 
- **Kotlin**: Uma linguagem de programação moderna, concisa e segura, que roda na máquina virtual Java (JVM).    
-**Spring Boot**: Um framework poderoso e flexível para o desenvolvimento de aplicativos Java e Kotlin. Spring Boot simplifica a configuração e o desenvolvimento de aplicativos, oferecendo um conjunto de ferramentas e bibliotecas integradas.
-**Spring Data JPA**: Parte do ecossistema Spring, Spring Data JPA oferece uma maneira simplificada de trabalhar com o banco de dados usando a JPA (Java Persistence API). Ele fornece recursos para mapeamento objeto-relacional (ORM), consultas JPQL (Java Persistence Query Language) e muito mais.
-**Spring Security**: Uma estrutura de autenticação e autorização robusta para aplicativos Spring. Spring Security oferece recursos para proteger endpoints da API, gerenciar usuários e sessões, autenticar usuários com JWT (JSON Web Tokens) e muito mais.
-**H2 Database**: Um banco de dados relacional leve e rápido, adequado para o desenvolvimento e teste de aplicativos. O H2 Database é integrado ao Spring Boot e pode ser usado como um banco de dados embarcado durante o desenvolvimento.
-**Docker**: Uma plataforma de código aberto que simplifica o processo de desenvolvimento, implantação e execução de aplicativos em contêineres. O Docker fornece uma maneira consistente de empacotar, distribuir e executar aplicativos em diferentes ambientes.
-**Maven**: Uma ferramenta de automação de compilação e gerenciamento de dependências para projetos Java e Kotlin. Maven simplifica o processo de construção, teste e empacotamento de aplicativos, gerenciando eficientemente as dependências do projeto.    
+-   **Kotlin**: Uma linguagem de programação moderna, concisa e segura, que roda na máquina virtual Java (JVM).    
+-   **Spring Boot**: Um framework poderoso e flexível para o desenvolvimento de aplicativos Java e Kotlin. Spring Boot simplifica a configuração e o desenvolvimento de aplicativos, oferecendo um conjunto de ferramentas e bibliotecas integradas.
+-   **Spring Data JPA**: Parte do ecossistema Spring, Spring Data JPA oferece uma maneira simplificada de trabalhar com o banco de dados usando a JPA (Java Persistence API). Ele fornece recursos para mapeamento objeto-relacional (ORM), consultas JPQL (Java Persistence Query Language) e muito mais.
+-   **Spring Security**: Uma estrutura de autenticação e autorização robusta para aplicativos Spring. Spring Security oferece recursos para proteger endpoints da API, gerenciar usuários e sessões, autenticar usuários com JWT (JSON Web Tokens) e muito mais.
+-   **H2 Database**: Um banco de dados relacional leve e rápido, adequado para o desenvolvimento e teste de aplicativos. O H2 Database é integrado ao Spring Boot e pode ser usado como um banco de dados embarcado durante o desenvolvimento.
+-   **Docker**: Uma plataforma de código aberto que simplifica o processo de desenvolvimento, implantação e execução de aplicativos em contêineres. O Docker fornece uma maneira consistente de empacotar, distribuir e executar aplicativos em diferentes ambientes.
+-   **Maven**: Uma ferramenta de automação de compilação e gerenciamento de dependências para projetos Java e Kotlin. Maven simplifica o processo de construção, teste e empacotamento de aplicativos, gerenciando eficientemente as dependências do projeto.    
 
 Essas tecnologias foram escolhidas pela sua robustez, comunidade ativa, facilidade de uso e integração, permitindo o desenvolvimento de aplicativos modernos e escaláveis com eficiência.
 
